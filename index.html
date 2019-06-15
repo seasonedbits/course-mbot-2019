@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>第四屆海峽兩岸暨港澳機械人大賽 訓練班</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/blockquote.css" />
+    <link rel="stylesheet" href="./css/quote-card.css" />
+    <link rel="stylesheet" href="./css/remark.css" />
+    <script src="./js/fontawesome-all.min.js"></script>
+    <script src="./js/remark-latest.min.js"></script>
+  </head>
+
+  <body>
+    <script>
+      function query2json(querystring) {
+        // remove any preceding url and split
+        var queries = querystring
+          .substring(querystring.indexOf("?") + 1)
+          .split("&");
+        var params = {},
+          pair,
+          d = decodeURIComponent;
+        // march and parse
+        for (var i = queries.length - 1; i >= 0; i--) {
+          pair = queries[i].split("=");
+          params[d(pair[0])] = d(pair[1]);
+        }
+
+        return params;
+      }
+      var queries = query2json(location.search);
+
+      var slideshow = remark.create({
+        sourceUrl: queries.slide || "slide.md",
+        ratio: "4:3",
+        highlightStyle: "github",
+        highlightLines: true
+      });
+      // console.log(slideshow.getSlides())
+    </script>
+  </body>
+</html>

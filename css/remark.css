@@ -1,0 +1,210 @@
+/*
+Customization for remarkjs css
+*/
+
+.remark-slide-content {
+  font-size: 1.5rem;
+  padding: 1em 2em !important;
+  font-weight: 300;
+}
+
+b,
+strong {
+  font-weight: bold !important;
+}
+
+h1 {
+  font-weight: bolder !important;
+}
+
+h2 {
+  font-weight: unset !important;
+}
+
+table {
+  width: 100%;
+  margin-bottom: 0.5em;
+}
+
+img {
+  height: auto;
+}
+
+.img-100 img {
+  max-width: 100%;
+}
+
+.img-75 img {
+  max-width: 75%;
+}
+
+.img-50 img {
+  max-width: 50%;
+}
+
+.img-25 img {
+  max-width: 25%;
+}
+
+table,
+th,
+td {
+  border-bottom: 1px solid silver;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 0.2rem;
+}
+
+thead th {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+tr td:not(:last-child),
+tr th:not(:last-child) {
+  border-right: 1px solid silver;
+}
+
+.footnote {
+  width: 100%;
+  border-top: 1px solid #eee;
+  padding: 1rem 4rem;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  font-size: small;
+}
+
+.footnote li {
+  /* list-style: decimal; */
+}
+
+.scroll {
+  overflow-y: scroll;
+  height: 100%;
+}
+
+/* To ensure all scroll bar will show up by default */
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+.fit-content {
+  width: fit-content;
+}
+
+.sidebar {
+  border-radius: 0.25rem !important;
+}
+
+.sidebar li {
+  font-size: x-large;
+  color: #868e96;
+}
+
+.sidebar li:last-of-type {
+  color: inherit;
+  font-style: italic;
+  font-weight: bold !important;
+}
+
+.row {
+  /* height: 100%; */
+}
+
+.remark-code {
+  border-radius: 0.25rem !important;
+  font-size: smaller;
+}
+
+.remark-inline-code {
+  padding: 0 !important;
+}
+
+a:link {
+  color: #0366d6;
+  font-style: italic;
+  text-decoration: none;
+}
+
+/*
+a:visited,
+a:active,
+a:hover {
+  text-decoration: none !important;
+}
+
+a:hover {
+  font-weight: bolder !important;
+}
+*/
+
+.sup {
+  vertical-align: super;
+  font-size: small;
+}
+
+.xlarge {
+  font-size: 2em;
+}
+
+.larger {
+  font-size: 1.2em;
+}
+
+.smaller {
+  font-size: 0.8em;
+}
+
+.xsmall {
+  font-size: 0.5em;
+}
+
+.red {
+  color: red;
+}
+.yellow {
+  color: yellow;
+}
+.green {
+  color: green;
+}
+
+.red-pin {
+  background: red;
+  font-weight: bold;
+}
+.black-pin {
+  color: white;
+  background: black;
+  font-weight: bold;
+}
+.yellow-pin {
+  background: yellow;
+  font-weight: bold;
+}
+
+@page {
+  size: 800px 600px;
+  margin: 0;
+}
+
+@media print {
+  .remark-slide-scaler {
+    width: 100% !important;
+    height: 100% !important;
+    transform: scale(1) !important;
+    top: 0 !important;
+    left: 0 !important;
+  }
+}
