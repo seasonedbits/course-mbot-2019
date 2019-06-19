@@ -10,7 +10,7 @@ class: center, middle
 
 1. 使用 USB 數據線將 mBot 與電腦連接起來
 2. 確保 mBot 已接上電，並且電源開關是在"On"
-3. 選擇"連接"，"序列埠"，選擇與你的 mBot 相對應的埠
+3. 選擇"連接"，"序列埠"，選擇與你的 mBot 相對應的埠 (COM1 以外的通常就是)
 4. 選擇"控制板"，"Makeblock"下選擇"mBot (mCore)"
 5. 選擇"擴充"，確認選擇了"Makeblock"  
    已啟用的擴充都放在機器人模組下
@@ -29,11 +29,11 @@ class: img-100
 
 .row[
 .col-6[
-![3.](./images/basic/mblock_serial.png)
-![5.](./images/basic/mblock_extension.png)
+![3.](./images/basics/mblock_serial.png)
+![5.](./images/basics/mblock_extension.png)
 ]
 .col-6[
-![4.](./images/basic/mblock_board.png)
+![4.](./images/basics/mblock_board.png)
 ]
 ]
 
@@ -41,13 +41,13 @@ class: img-100
 
 class: img-100
 
-![](./images/basic/mblock_not_connected.png)
+![](./images/basics/mblock_not_connected.png)
 
 ---
 
 class: img-100
 
-![](./images/basic/mblock_connected.png)
+![](./images/basics/mblock_connected.png)
 
 ---
 
@@ -68,14 +68,15 @@ class: img-100
 
 - 在線模式**必須**要用出廠的韌體
 - 選擇"連接"，"更新韌體"
-- 用 Scratch 事件模組的 Hat 模組積木來開始你的程序
+- 用 Scratch 事件模組的 Hat 積木來開始你的程序
+- 可以有多個Hat 積木
 
 .row[
   .col-6[
-    ![](./images/basic/mblock_firmware.png)
+    ![](./images/basics/mblock_firmware.png)
   ]
   .col-6.center[
-    ![](./images/basic/mblock_hats.png)
+    ![](./images/basics/mblock_hats.png)
   ]
 ]
 
@@ -109,7 +110,9 @@ class: img-100
 class: img-100
 
 .center[
-![](./images/basic/mblock_mbot_hat.png)
+![](./images/basics/mblock_mbot_hat.png)
+
+只可以有一個"mBot 主程序" 積木
 ]
 
 ---
@@ -117,7 +120,9 @@ class: img-100
 class: img-100
 
 .center[
-![](./images/basic/mblock_arduino_panel.png)
+![](./images/basics/mblock_arduino_panel.png)
+
+點"返回"回到Scratch 在線模式
 ]
 
 ---
@@ -125,7 +130,7 @@ class: img-100
 class: img-100
 
 .center[
-![](./images/basic/mblock_arduino_upload_done.png)
+![](./images/basics/mblock_arduino_upload_done.png)
 ]
 
 ---
@@ -139,7 +144,7 @@ class: center, middle
 class: img-100
 
 .center[
-![](./images/basic/mbot_components.jpg)
+![](./images/basics/mbot_components.jpg)
 ]
 
 ---
@@ -147,7 +152,7 @@ class: img-100
 class: img-75
 
 .center[
-![](./images/basic/mcore.png)
+![](./images/basics/mcore.png)
 ]
 
 ---
@@ -164,10 +169,11 @@ class: img-75
 class: img-100
 
 .center[
-![](./images/basic/program_ultrasound.png)
+![](./images/basics/program_ultrasound.png)
 ]
 
-"說"積木在外觀模組下，是Scratch 的⻆色積木
+"說"積木在外觀模組下，是Scratch 的⻆色積木  
+只能在在線模式使用，在離線模式要移除，否則會報錯
 
 ---
 
@@ -175,11 +181,17 @@ class: img-100
 
 .row[
   .col-6[
-    ![](./images/basic/program_buzzer1.png)
+    ![](./images/basics/program_buzzer1.png)
   ]
   .col-6[
-    ![](./images/basic/program_buzzer2.png)
+    ![](./images/basics/program_buzzer2.png)
   ]
+]
+
+.footnote[
+[buzzer1.sb2](./programs/basics/buzzer1.sb2)  
+[buzzer2.sb2](./programs/basics/buzzer2.sb2)  
+[mbot_buzzer.sb2](./programs/basics/mbot_buzzer.sb2)
 ]
 
 ---
@@ -187,7 +199,11 @@ class: img-100
 class: img-100
 
 .center[
-![](./images/basic/program_scream.png)
+![](./images/basics/program_alert.png)
+]
+
+.footnote[
+[alert.sb2](./programs/basics/alert.sb2)  
 ]
 
 ---
@@ -198,7 +214,11 @@ class: img-100
 
 .title[小貼士]
 
-我們所有用馬達的程序一開始都要等待板載按鈕按下，避免 mBot 一開機就會發狂亂跑.
+我們所有用馬達的程序一開始都要等待板載按鈕按下，避免 mBot 一開機就發狂亂跑。
+
+.center[
+![](./images/basics/wait_button.png)
+]
 
 ]
 
@@ -209,17 +229,75 @@ class: img-100
 # 轉向
 
 .center[
-![](./images/basic/differential_drive.png)
+![](./images/basics/differential_drive.png)
+]
+
+.row[
+  .col-4.center[
+    前進  
+    Forward
+  ]
+  .col-4.center[
+    差速左轉  
+    Turn Left
+  ]
+  .col-4.center[
+    原地左轉  
+    Spin Left
+  ]
 ]
 
 ---
 
-class: img-100
+# 轉向積木
+
+.center.img-100[
+![](./images/basics/differential_drive.png)
+]
+
+--
+
+.row[
+  .col-6.center[
+    ![](./images/basics/differential_left.png)
+    差速左轉
+  ]
+  .col-6.center[
+    ![](./images/basics/spin_left.png)
+    原地左轉
+  ]
+]
+
+---
 
 # 轉圈速度
 
 - 我們來量一下mBot 的轉圈速度 (日後有用)
 - [stopwatch - Google Search](https://www.google.com/search?q=stopwatch)
+
+---
+
+class: img-75
+
+# mBot 曱甴
+
+.center[
+![](./flowchart/cockroach.png)
+]
+
+---
+
+class: img-75
+
+# mBot 曱甴
+
+.center[
+![](./images/basics/program_cockroach.png)
+]
+
+.footnote[
+[cockroach.sb2](./programs/basics/cockroach.sb2)  
+]
 
 ---
 

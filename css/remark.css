@@ -63,6 +63,10 @@ thead th {
   font-size: 1.1em;
 }
 
+td:empty {
+  visibility: hidden;
+}
+
 tr td:not(:last-child),
 tr th:not(:last-child) {
   border-right: 1px solid silver;
