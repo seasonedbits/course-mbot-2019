@@ -42,6 +42,10 @@ img {
   max-width: 50%;
 }
 
+.img-40 img {
+  max-width: 40%;
+}
+
 .img-25 img {
   max-width: 25%;
 }

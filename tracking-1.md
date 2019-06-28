@@ -1,5 +1,11 @@
 [//]: # "slide Markdown for remark"
 
+class: center, middle
+
+# 基本循跡
+
+---
+
 class: img-100
 
 # 循跡模塊
@@ -31,20 +37,20 @@ class: img-100
 ]
 
 - 反射光線較少 (檢測到黑線)：  
-  循跡模塊相應的指示燈**亮**，端口電平為**LOW (0)**
+  循跡模塊相應的指示燈**滅**，端口電平為**LOW (0)**
 - 反射光線較多 (未檢測到黑線)：  
-  循跡模塊相應的指示燈**滅**，端口電平為**HIGH (1)**
+  循跡模塊相應的指示燈**亮**，端口電平為**HIGH (1)**
 
 ---
 
-class: img-50
+class: img-40
 
-| 左感應器 | 右感應器 |                                     | 動作  |
-| :------: | :------: | :---------------------------------: | :---: |
-|    黑    |    黑    | ![](./images/tracking/status_0.png) |       |
-|    黑    |    白    | ![](./images/tracking/status_1.png) |       |
-|    白    |    黑    | ![](./images/tracking/status_2.png) |       |
-|    白    |    白    | ![](./images/tracking/status_3.png) |       |
+| 左感應器 | 右感應器 |                                     | 動作 |
+| :------: | :------: | :---------------------------------: | :--: |
+|    黑    |    黑    | ![](./images/tracking/status_0.png) | 前進 |
+|    黑    |    白    | ![](./images/tracking/status_1.png) | 左轉 |
+|    白    |    黑    | ![](./images/tracking/status_2.png) | 右轉 |
+|    白    |    白    | ![](./images/tracking/status_3.png) |  ？  |
 
 ---
 
@@ -178,7 +184,7 @@ class: img-100
 
 - 做判別時要把循跡狀態先存起來，mBot 一直在動，每次感應器回傳可能會不一樣的
 - 前進和轉向速度不要相差太遠，否則 mBot 會走得搖搖晃晃
-- 應該用嵌套的"如果 否則 "，因為每個區塊處理一種循跡狀態
+- 應該用嵌套的"如果 否則 "，因為每個區塊只處理一種循跡狀態
 - 寫了第一個區塊後可以用右鍵，複製貼到第二個區塊
 - 直接用`binary.sb2` 來開始吧
 
@@ -195,6 +201,19 @@ class: img-100
 
 ---
 
+class: img-50
+
+.center[
+![](./images/tracking/program_basic_tracking1.png)
+]
+
+.footnote[
+[basic_tracking1.sb2](./programs/tracking/basic_tracking1.sb2)  
+[basic_tracking2.sb2](./programs/tracking/basic_tracking2.sb2) 一直轉向直到找到黑線
+]
+
+---
+
 # 記錄狀態
 
 - 前進到第三條黑線停止，並*停止程序*
@@ -206,6 +225,14 @@ class: img-100
 
 限時十分鐘
 
+]
+
+---
+
+# 流程圖
+
+.center[
+![](./flowchart/three_lines.png)
 ]
 
 ---
@@ -232,6 +259,16 @@ class: img-100
 
 ---
 
+.center[
+![](./images/tracking/program_three_lines.png)
+]
+
+.footnote[
+[three_lines.sb2](./programs/tracking/three_lines.sb2)  
+]
+
+---
+
 class: center, middle
 
 # 角度大怎麽辦？
@@ -253,63 +290,13 @@ class: center, middle
 
 ---
 
-class: center, middle
-
-# 虛線怎麽辦？
-
----
-
-# 虛線處理
-
-- 在有虛線的地圖，不能一碰到白色就觸發大角度處理
-- 碰到白色時記下當前的計時器，不作操作  
-  計時器計的是千份之一秒
-- 碰到黑線就把記錄歸零
-- 如記錄不是零（一直在白色上）  
-  而且當前計時器比記錄超過指定值（例如`x`秒）  
-  那我們真的跑出賽道了，這樣才觸發大角度處理
-
-- 超時值是怎樣定的？  
-  mBot 要在超時值內走過虛線，讓記錄歸零，  
-  否則會誤觸發大角度處理  
-  但亦*不能太大*，否則在大角度時會跑得太遠
-
----
-
-class: img-100
-
-# 指令積木
-
-- 我們可以自定義指令積木（函數），把大角度處理區塊放到裡面，方便重用
-
-.row[
-.col-6.center[
-![](./images/basics/function1.png)
-]
-.col-6.center[
-![](./images/basics/function2.png)
-]
+.center[
+![](./images/tracking/program_saving_left.png)
 ]
 
----
-
-# 大角度處理（通用）
-
-- 記下當前的計時器
-- 往**左轉**直至：
-  - 重新找到黑線 **或**
-  - 當前計時器比記錄超過指定值（例如`x`秒）
-- 如果超時都沒有在左邊找到黑線，就往**右轉**直至：
-  - 重新找到黑線 **或**
-  - 當前計時器比記錄超過指定值（例如`2x`秒）  
-    `2x`是先用`x`秒回中，再往右轉`x`秒
---
-- 如果超時都沒有在右邊找到黑線．．．_我們迷路了_
-
-
-- 超時值是怎樣定的？  
-  超時值太小會找不到黑線，大則要找右邊黑線會很慢  
-  最大是令 mBot 轉＜ 180° 就夠了
+.footnote[
+[saving_left.sb2](./programs/tracking/saving_left.sb2)
+]
 
 ---
 

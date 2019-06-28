@@ -1,4 +1,4 @@
-micro:bit course Season 1, powered by [remark](https://remarkjs.com/).
+Markdown presentation template, powered by [remark](https://remarkjs.com/).
 
 ## Presentation
 
