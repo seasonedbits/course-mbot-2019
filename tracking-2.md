@@ -215,6 +215,12 @@ class: center, middle
 
 ---
 
+class: middle, center, img-100
+
+![](./images/horse_meme.jpg)
+
+---
+
 class: middle, img-100
 
 ![](./images/tracking/program_tracking_1.png)
@@ -240,12 +246,6 @@ class: middle, img-100
 .footnote[
 循跡程序：[tracking.sb2](./programs/tracking/tracking.sb2)
 ]
-
----
-
-class: middle, center, img-100
-
-![](./images/horse_meme.jpg)
 
 ---
 
@@ -349,12 +349,11 @@ class: img-75
   **在白色表面滅，在黑線上亮**
 
 .smaller[
-數碼輸出跟mBot 巡線感應器**相反**
 
 - 反射光線較少 (檢測到黑線)：  
-  循跡模塊相應的指示燈**亮**，端口電平為**HIGH (1)**
+  循跡模塊相應的指示燈**亮**，端口電平為**LOW (0)**
 - 反射光線較多 (未檢測到黑線)：  
-  循跡模塊相應的指示燈**滅**，端口電平為**LOW (0)**
+  循跡模塊相應的指示燈**滅**，端口電平為**HIGH (1)**
 ]
 
 ---
@@ -370,7 +369,6 @@ class: img-75
   **在白色表面亮，在黑線上滅**
 
 .smaller[
-數碼輸出跟mBot 巡線感應器**相反**
 
 - 反射光線較少 (檢測到黑線)：  
   循跡模塊相應的指示燈**滅**，端口電平為**HIGH (1)**
